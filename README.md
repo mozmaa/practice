@@ -1,1 +1,3 @@
 # practice
+This is my first try at gitub, and my first repository. In this one there will be some practice in java coding, implementing OOP, interfaces, working with MySQL...
+These are the first step towards my proggraming career
