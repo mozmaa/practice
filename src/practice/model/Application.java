@@ -21,7 +21,7 @@ public class Application {
 
 	private static void initDatabase() throws Exception {
 		Connection conn = DriverManager.getConnection(
-				"jdbc:mysql://localhost:3306/voz?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Europe/Belgrade", 
+				"jdbc:mysql://localhost:3306/onlineOrders?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Europe/Belgrade", 
 				"root", 
 				"root");
 
@@ -46,7 +46,7 @@ public class Application {
 
 	public static void main(String[] args) throws Exception {
 		Meni.pokreni("Online orders", new StavkaMenija[] {
-			new IzlaznaStavkaMenija("Izlaz"),
+			new IzlaznaStavkaMenija("Exit"),
 			new FunkcionalnaStavkaMenija("Show all products") {
 
 				@Override
