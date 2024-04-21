@@ -1,7 +1,30 @@
+DROP SCHEMA IF EXISTS onlineOrders;
+CREATE SCHEMA onlineOrders DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE onlineOrders;
+
+CREATE TABLE product(
+id BIGINT AUTO_INCREMENT,
+referenceCode VARCHAR (4) UNIQUE NOT NULL,
+productName VARCHAR (50) NOT NULL,
+price DECIMAL (12,2) NOT NULL,
+freeDeliv BOOL DEFAULT false,
+PRIMARY KEY (id)
+);
+
+CREATE TABLE orders (
+id BIGINT AUTO_INCREMENT,
+orderData TIMESTAMP NOT NULL,
+street VARCHAR (50),
+streetNum INT,
+idProduct BIGINT,
+PRIMARY KEY (id),
+FOREIGN KEY (idProduct) REFERENCES products (id)
+);
+
 # proizvodi: sifra, naziv, cena, besplatna dostava
-'0001', 'Proizvod 1' 5000.00, false
-'0002', 'Proizvod 2' 100000.00, false
-'0003', 'Proizvod 3', 15000.00, true
+INSERT INTO products (id, referenceCode, productName, price, freeDeliv) VALUES (1, '0001', 'Proizvod 1' 5000.00, false);
+INSERT INTO products (id, referenceCode, productName, price, freeDeliv) VALUES (2, '0002', 'Proizvod 2' 100000.00, false);
+INSERT INTO products (id, referenceCode, productName, price, freeDeliv) VALUES (3, '0003', 'Proizvod 3', 15000.00, true);
 
 # porudžbine: datum i vreme, ulica, broj, proizvod
 '2021-09-01 10:00', 'Bul. Oslobođenja', 10, PRVI
