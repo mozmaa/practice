@@ -28,9 +28,9 @@ public class Application {
 		ProductDAO productDAO = new DatabaseProductDAO(conn);
 		OrderDAO orderDAO = new DatabaseOrderDAO(conn);
 
-		ProductUI.setVozDAO(productDAO);
+		ProductUI.setProductDAO(productDAO);
 		OrderUI.setKartaDAO(orderDAO);
-		ReportUI.setVozDAO(productDAO);
+		ReportUI.setProductDAO(productDAO);
 	}
 
 	static {

@@ -11,7 +11,7 @@ public class ProductUI {
 
 	public static ProductDAO productDAO;
 	
-	public static void setVozDAO(ProductDAO productDAO) {
+	public static void setProductDAO(ProductDAO productDAO) {
 		ProductUI.productDAO = productDAO;
 	}
 	

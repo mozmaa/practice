@@ -81,6 +81,8 @@ public class Order {
 		return id;
 	}
 	
-	
+	public boolean isDateInRange(LocalDateTime min, LocalDateTime max) {
+		return this.orderDate.compareTo(min) >= 0 && orderDate.compareTo(max) <= 0;
+	}
 	
 }
